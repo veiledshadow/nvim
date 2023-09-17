@@ -30,11 +30,35 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
+<<<<<<< HEAD
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+=======
+    -- Easy Moving
+    ["H"] = "5h",
+    ["J"] = "5j",
+    ["K"] = "5k",
+    ["L"] = "5l",
+    -- quick save
+    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    -- disable some keys
+    ["\\"] = false,
+    ["|"] = false,
+
+  },
+  v = {
+    ["H"] = "5h",
+    ["J"] = "5j",
+    ["K"] = "5k",
+    ["L"] = "5l",
+  },
+  t = {
+    -- setting a mapping to false will disable it
+     ["<esc>"] = false,
+>>>>>>> ae970b4 (.)
   },
 }
