@@ -9,12 +9,9 @@ return {
     wrap = false, -- sets vim.opt.wrap
   },
   g = {
-<<<<<<< HEAD
     mapleader = " ", -- sets vim.g.mapleader
-=======
     mapleader = "\\", -- sets vim.g.mapleader
     maplocalleader = " ",
->>>>>>> ae970b4 (.)
     autoformat_enabled = true, -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
     cmp_enabled = true, -- enable completion at start
     autopairs_enabled = true, -- enable autopairs at start
