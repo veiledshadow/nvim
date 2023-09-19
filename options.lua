@@ -9,7 +9,6 @@ return {
     wrap = false, -- sets vim.opt.wrap
   },
   g = {
-    mapleader = " ", -- sets vim.g.mapleader
     mapleader = "\\", -- sets vim.g.mapleader
     maplocalleader = " ",
     autoformat_enabled = true, -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
@@ -21,12 +20,4 @@ return {
     resession_enabled = false, -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
   },
 }
--- If you need more control, you can use the function()...end notation
--- return function(local_vim)
---   local_vim.opt.relativenumber = true
---   local_vim.g.mapleader = " "
---   local_vim.opt.whichwrap = vim.opt.whichwrap - { 'b', 's' } -- removing option from list
---   local_vim.opt.shortmess = vim.opt.shortmess + { I = true } -- add to option list
---
---   return local_vim
--- end
+

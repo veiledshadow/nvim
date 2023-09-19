@@ -6,19 +6,7 @@
 return {
   -- first key is the mode
   n = {
-    -- second key is the lefthand side of the map
 
-    -- navigate buffer tabs with `H` and `L`
-    -- L = {
-    --   function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-    --   desc = "Next buffer",
-    -- },
-    -- H = {
-    --   function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-    --   desc = "Previous buffer",
-    -- },
-
-    -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
       function()
         require("astronvim.utils.status").heirline.buffer_picker(
@@ -27,33 +15,23 @@ return {
       end,
       desc = "Pick to close",
     },
-    -- tables with the `name` key will be registered with which-key if it's installed
-    -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
-    -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-  },
-  n = {
-    -- setting a mapping to false will disable it
-    -- ["<esc>"] = false,
-    -- Easy Moving
     ["H"] = "5h",
     ["J"] = "5j",
     ["K"] = "5k",
     ["L"] = "5l",
-    -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-    -- disable some keys
     ["\\"] = false,
     ["|"] = false,
 
   },
+
   v = {
     ["H"] = "5h",
     ["J"] = "5j",
     ["K"] = "5k",
     ["L"] = "5l",
   },
+
   t = {
     -- setting a mapping to false will disable it
      ["<esc>"] = false,

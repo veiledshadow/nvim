@@ -1,2 +1,3 @@
 --return "gruvbox-material"
-return "deus"
+--return "dracula"
+return "catppuccin"

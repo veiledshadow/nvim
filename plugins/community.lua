@@ -9,7 +9,6 @@ return {
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
   {import = "astrocommunity.markdown-and-latex.vimtex"},
   {import = "astrocommunity.markdown-and-latex.markdown-preview-nvim"},
-  {import = "astrocommunity.markdown-and-latex.peek-nvim"},
 
   -- bars 
   {import = "astrocommunity.bars-and-lines.bufferline-nvim"},
@@ -21,4 +20,5 @@ return {
   {import = "astrocommunity.pack.markdown"},
   --{import = "astrocommunity.pack.python"},
 
+  {import = "astrocommunity.motion.mini-surround"}
 }
