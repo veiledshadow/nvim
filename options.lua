@@ -2,11 +2,23 @@
 return {
   opt = {
     -- set to true or false etc.
+    autochdir = true,
+    foldmethod = "indent",
+    foldlevel = 99,
+    foldenable = true,
+    foldlevelstart = 99,
     relativenumber = true, -- sets vim.opt.relativenumber
     number = true, -- sets vim.opt.number
     spell = false, -- sets vim.opt.spell
     signcolumn = "auto", -- sets vim.opt.signcolumn to auto
     wrap = false, -- sets vim.opt.wrap
+    termguicolors = true,
+    shell="pwsh",
+    shellcmdflag='-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command',
+    shellquote="",
+    shellxquote="",
+    shellredir = "2>&1 | Out-File -Encoding UTF8 %s",
+    shellpipe = "2>&1 | Out-File -Encoding UTF8 %s",
   },
   g = {
     mapleader = "\\", -- sets vim.g.mapleader
@@ -18,6 +30,8 @@ return {
     icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
     resession_enabled = false, -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
+    loaded_netrw = 1,
+    loaded_netrwPlugin = 1,
   },
 }
 

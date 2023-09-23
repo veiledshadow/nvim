@@ -20,9 +20,9 @@ return {
     ["J"] = "5j",
     ["K"] = "5k",
     ["L"] = "5l",
+    ["<leader>e"] = "<cmd>NvimTreeToggle<cr>",
     ["\\"] = false,
     ["|"] = false,
-
   },
 
   v = {

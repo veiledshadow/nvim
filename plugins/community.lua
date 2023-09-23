@@ -18,7 +18,12 @@ return {
   -- lsp
   {import = "astrocommunity.pack.cpp"},
   {import = "astrocommunity.pack.markdown"},
+  {import = "astrocommunity.lsp.inc-rename-nvim"},
   --{import = "astrocommunity.pack.python"},
 
-  {import = "astrocommunity.motion.mini-surround"}
+  {import = "astrocommunity.motion.mini-surround"},
+
+  -- multicursor 
+  --
+  {import = "astrocommunity.editing-support.multicursors-nvim"}
 }
