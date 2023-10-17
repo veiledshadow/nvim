@@ -2,7 +2,7 @@
 return {
   opt = {
     -- set to true or false etc.
-    autochdir = true,
+    autochdir = false,
     foldmethod = "indent",
     foldlevel = 99,
     foldenable = true,
@@ -11,7 +11,7 @@ return {
     number = true, -- sets vim.opt.number
     spell = false, -- sets vim.opt.spell
     signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-    wrap = false, -- sets vim.opt.wrap
+    wrap = true, -- sets vim.opt.wrap
     termguicolors = true,
     shell="pwsh",
     shellcmdflag='-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command',
