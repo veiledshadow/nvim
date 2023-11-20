@@ -12,8 +12,92 @@ local M = {
 	},
 
 	--------
+	-- Coding helper
+	--------
+
+	-- code_runner
+	{
+		"CRAG666/code_runner.nvim",
+		lazy = true,
+		keys = {
+			{ "<leader>cr", "<Cmd>RunCode<CR>", desc = "run code" },
+		},
+		config = function()
+			require('code_runner').setup({
+				filetype = {
+					python = "python -u",
+				},
+			})
+		end
+	},
+
+	-- terminal
+	{
+		"norcalli/nvim-terminal.lua",
+		lazy = true,
+		keys = {
+			{ "<leader>t", "<Cmd>split<CR><Cmd>terminal<CR>", desc = "terminal below" },
+		},
+		config = function()
+			require 'terminal'.setup({})
+		end
+	},
+
+	-- comment
+	{
+		"echasnovski/mini.comment",
+		event = "VeryLazy",
+		opts = {
+			options = {
+				custom_commentstring = function()
+					return vim.bo.commentstring
+				end,
+			},
+		},
+	},
+
+	-- null-ls
+	{
+		"jay-babu/mason-null-ls.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		dependencies = {
+			"williamboman/mason.nvim",
+			"jose-elias-alvarez/null-ls.nvim",
+		},
+		config = function()
+			require("mason-null-ls").setup({
+				ensure_installed = { "black", "prettier" }
+			})
+			local null_ls = require("null-ls")
+			null_ls.setup({
+				sources = {
+					null_ls.builtins.formatting.black,
+					null_ls.builtins.formatting.prettier,
+				}
+			})
+		end,
+	},
+
+
+	--------
 	-- Edit
 	--------
+
+	-- surround
+	{
+		"echasnovski/mini.surround",
+		opts = {
+			mappings = {
+				add = "gsa",
+				delete = "gsd",
+				find = "gsf",
+				find_left = "gsF",
+				highlight = "gsh",
+				replace = "gsr",
+				update_n_lines = "gsn",
+			},
+		},
+	},
 
 	-- which-key
 	{
@@ -102,6 +186,19 @@ local M = {
 		event = "InsertEnter"
 	},
 
+	-- flash
+	{
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		opts = {},
+		keys = {
+			{ "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+			--{ "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+			--{ "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+			--{ "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+			--{ "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
+		},
+	},
 	------
 	-- Gui
 	------
@@ -176,11 +273,29 @@ local M = {
 	-- bufferline
 	{
 		"akinsho/bufferline.nvim",
-		version = "*",
+		event = "VeryLazy",
 		dependencies = 'nvim-tree/nvim-web-devicons',
-		config = function()
-			require("bufferline").setup {}
-		end
+		opts = {
+			options = {
+				always_show_bufferline = false,
+
+				offsets = {
+					{
+						filetype = "neo-tree",
+						text = "Neo-tree",
+						highlight = "Directory",
+						text_align = "left",
+					}
+				}
+			}
+		}
+	},
+
+	-- dropbar
+	{
+		"Bekaboo/dropbar.nvim",
+		event = "UIEnter",
+		opts = {}
 	},
 
 	-- treesitter

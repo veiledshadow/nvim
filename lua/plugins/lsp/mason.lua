@@ -7,15 +7,6 @@ local M = {
 		config = function()
 			require("mason").setup({})
 		end
-		--build = ":MasonUpdate",
-		--opts = {
-		--  ensure_installed = {
-		--    "lua_ls",
-		--    "texlab",
-		--		"pyright"
-		--    -- "flake8",
-		--  },
-		--},
 	},
 
 	{
@@ -25,14 +16,14 @@ local M = {
 			ensure_installed = {
 				"lua_ls",
 				"texlab",
-				"pyright"
+				"pyright",
+				"remark_ls"
 			}
 		},
 		config = function(_, opts)
 			require("mason-lspconfig").setup(opts)
 		end
 	}
-
 }
 
 return M
